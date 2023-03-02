@@ -1,0 +1,63 @@
+﻿@model TestT.Models.CompanyTest
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<br />
+
+<form asp-action="BtnEdit" method="post">
+    <div class="row">
+        <div class="col-6">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group ">
+                <label asp-for="Name" class="control-label text-white bg-dark"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-6">
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label text-white bg-dark"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-6">
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label text-white bg-dark"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-6">
+
+            <div class="form-group">
+                <label asp-for="WebSite" class="control-label text-white bg-dark"></label>
+                <input asp-for="WebSite" class="form-control" />
+                <span asp-validation-for="WebSite" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-8">
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-dark" />
+            </div>
+        </div>
+
+    </div>
+</form>
+<br />
+<div>
+    <a asp-action="list" class="text-muted">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
